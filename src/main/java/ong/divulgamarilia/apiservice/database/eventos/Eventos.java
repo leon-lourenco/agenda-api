@@ -24,6 +24,8 @@ public class Eventos {
 
     String descricaoLonga;
 
+    String tipoDeEvento;
+
     Date dataPublicacao;
 
     Date dataModificacao;

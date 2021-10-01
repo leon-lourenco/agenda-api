@@ -17,12 +17,12 @@ public class LoginController {
 
     LoginBusinessImpl business;
 
-    @PostMapping("/login/auth")
+    @PostMapping("/login")
     public boolean login(@RequestBody Login login) {
         return business.auth(login);
     }
 
-    @PostMapping("/login/register")
+    @PostMapping("/register")
     public Long register(@RequestBody RegisterBody registerBody) {
         return business.register(registerBody);
     }

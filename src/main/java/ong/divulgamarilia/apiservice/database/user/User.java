@@ -29,5 +29,5 @@ public class User {
     Login login;
 
     @OneToMany
-    private Set<Eventos> publicacoes;
+    private Set<Eventos> eventos;
 }
