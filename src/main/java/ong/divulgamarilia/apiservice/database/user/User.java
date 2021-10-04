@@ -3,7 +3,7 @@ package ong.divulgamarilia.apiservice.database.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ong.divulgamarilia.apiservice.database.eventos.Eventos;
+import ong.divulgamarilia.apiservice.database.evento.Evento;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -29,5 +29,5 @@ public class User {
     Login login;
 
     @OneToMany
-    private Set<Eventos> eventos;
+    private Set<Evento> eventos;
 }
