@@ -1,10 +1,11 @@
 package ong.divulgamarilia.apiservice.business.login;
 
-import ong.divulgamarilia.apiservice.database.user.Login;
-import ong.divulgamarilia.apiservice.database.user.LoginRepository;
-import ong.divulgamarilia.apiservice.database.user.User;
-import ong.divulgamarilia.apiservice.database.user.UserRepository;
-import org.springframework.http.ResponseEntity;
+import ong.divulgamarilia.apiservice.business.login.beans.LoginBody;
+import ong.divulgamarilia.apiservice.business.login.beans.RegisterBody;
+import ong.divulgamarilia.apiservice.database.user.model.Login;
+import ong.divulgamarilia.apiservice.database.user.repository.LoginRepository;
+import ong.divulgamarilia.apiservice.database.user.model.User;
+import ong.divulgamarilia.apiservice.database.user.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,7 +15,7 @@ public class LoginBusinessImpl implements LoginBusiness {
     UserRepository userRepository;
 
     @Override
-    public boolean auth(Login login) {
+    public boolean auth(LoginBody login) {
         Login loginByEmail = loginRepository.findLoginByEmail(login.getEmail());
         if (loginByEmail.getEmail().equals(login.getEmail())){
             return loginByEmail.getPassword().equals(login.getPassword());
@@ -35,6 +36,6 @@ public class LoginBusinessImpl implements LoginBusiness {
 
         user.setLogin(login);
 
-        return userRepository.save(user).getId_user();
+        return userRepository.save(user).getId();
     }
 }

@@ -1,4 +1,4 @@
-package ong.divulgamarilia.apiservice.database.user;
+package ong.divulgamarilia.apiservice.database.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,13 +11,17 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "login")
 public class Login {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_login;
+    private Long id;
 
     private String email;
 
     private String password;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "users_id")
+    private User user;
 }

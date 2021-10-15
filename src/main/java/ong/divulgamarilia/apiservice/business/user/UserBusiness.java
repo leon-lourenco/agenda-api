@@ -1,13 +1,11 @@
 package ong.divulgamarilia.apiservice.business.user;
 
-import ong.divulgamarilia.apiservice.database.evento.Evento;
+import ong.divulgamarilia.apiservice.database.evento.model.Evento;
 
 import java.util.List;
 
 public interface UserBusiness {
-    public List<Evento> listarEventosPorUsuario();
+    public boolean deletarUsuario(Long id);
 
-    public boolean deletarUsuario();
-
-    public boolean editarInformacoes();
+    public boolean editarInformacoes(EditUserBody body);
 }
