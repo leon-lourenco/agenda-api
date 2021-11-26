@@ -14,7 +14,7 @@ public class UserController {
 
     UserBusinessImpl business;
 
-    @PutMapping
+    @PutMapping("/user/edit")
     public boolean editaDados(EditUserBody body) {
         return business.editarInformacoes(body);
     }

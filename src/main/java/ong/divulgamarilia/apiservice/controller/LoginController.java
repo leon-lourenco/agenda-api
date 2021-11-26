@@ -1,5 +1,6 @@
 package ong.divulgamarilia.apiservice.controller;
 
+import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import ong.divulgamarilia.apiservice.business.login.LoginBusinessImpl;
 import ong.divulgamarilia.apiservice.business.login.beans.LoginBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @V1APIController
+@Api(description = "Set of endpoints for Creating, Retrieving, Updating and Deleting of Events.")
 public class LoginController {
 
     LoginBusinessImpl business;
